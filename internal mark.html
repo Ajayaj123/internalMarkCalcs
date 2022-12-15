@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel="stylesheet" href="./bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-dark">
+     <header class="bg-primary" >
+          <div class="container">
+               <div class="row">
+                    <div class="col text-center">
+                        <h1> INTERNAL MARKS </h1> 
+                    </div>
+               </div>
+          </div>
+     </header>
+     <div class="container-fluid mt-5">
+          <div class="row">
+               <div class=" col-lg-2 bg-light col-md-6 col-sm-12 text-center" style="margin-left: 50px; border-radius:20px; box-shadow: 2px 2px 2px 2px;">
+                    <div class="mt-3">
+                         <h2>Attendance</h2>
+
+                         <input type="text" placeholder="Ex-50-90" id="ad" style="border-radius: 10px;">
+                    </div>
+               </div>
+               <div class="offset-lg-1 col-lg-2 col-md-6 col-sm-12 bg-light  text-center"
+                    style="border-radius:20px; box-shadow: 2px 2px 2px 2px;">
+                    <div class="mt-3">
+
+                         <h2>Cycle Test-1</h2>
+
+                         <input type="text" placeholder="Tamil" id="t1"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="English" id="e1"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="Maths" id="m1"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="Science" id="s1"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="Social" id="ss1" style="border-radius: 10px;margin-top: 3px;">
+                         <br>
+                    </div>
+               </div>
+               <div class=" offset-lg-1 col-lg-2 col-md-6 col-sm-12 bg-light  text-center"
+                    style="border-radius:20px;  box-shadow: 2px 2px 2px 2px;">
+                    <div class="mt-3">
+                         <h2>Cycle Test-2</h2>
+                         <input type="text" placeholder="Tamil" id="t2"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="English" id="e2"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="Maths" id="m2"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="Science" id="s2"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="Social" id="ss2" style="border-radius: 10px;margin-top: 3px;">
+                         <br>
+                    </div>
+               </div>
+               <div class=" col-lg-2 offset-lg-1 col-md-6 col-sm-12 bg-light  text-center"
+                    style="border-radius:20px; box-shadow: 2px 2px 2px 2px; ">
+                    <div class="mt-3">
+                         <h2>Cycle Test-3</h2>
+                         <input type="text" placeholder="Tamil" id="t3"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="English" id="e3"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="Maths" id="m3"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="Science" id="s3"
+                              style="border-radius: 10px;margin-top: 3px;"><br>
+                         <input type="text" placeholder="Social" id="ss3" style="border-radius: 10px;margin-top: 3px;">
+                         <br>
+                         <br><br>
+                    </div>
+               </div>
+               <div class=" offset-lg-5 col-lg-3 col-md-6 col-sm-12 mt-5">
+                    <button class="btn " style="font-size: 30px; background-color: cornflowerblue; border-radius: 20px; color: white;" onclick="but1(document.getElementById('ad').value)">
+                         SUBMIT</button>
+               </div>
+               <marquee >
+                    <h1 id="ans" class="mt-4" style="color: crimson; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"></h1>
+
+               </marquee>
+
+          </div>
+     </div>
+     <script>
+          var attend;
+          var c1;
+          var c2;
+          var c3;
+          function but1(a) {
+               if (a >= 90) {
+                    attend = 5;
+               }
+               else if (a >= 80) {
+                    attend = 4;
+
+               }
+               else if (a >= 70) {
+                    attend = 3;
+
+               }
+               else if (a >= 60) {
+                    attend = 2;
+
+               }
+               else if (a >= 50) {
+                    attend = 1;
+
+               }
+               else {
+                    attend = 0;
+                    // console.log("hi");
+               }
+               but2(document.getElementById('t1').value, document.getElementById('e1').value, document.getElementById('m1').value, document.getElementById('s1').value, document.getElementById('ss1').value)
+          }
+          function but2(t1, e1, m1, s1, ss1) {
+               var avrg = parseInt(t1) + parseInt(e1) + parseInt(m1) + parseInt(s1) + parseInt(ss1);
+               total = avrg / 5;
+
+               if (total >= 90) {
+                    c1 = 5;
+
+               }
+               else if (total >= 80) {
+                    c1 = 4;
+
+               }
+               else if (total >= 70) {
+                    c1 = 3;
+
+               }
+               else if (total >= 60) {
+                    c1 = 2;
+
+
+               }
+               else if (total >= 50) {
+                    c1 = 1;
+
+
+               }
+               else {
+                    c1 = 0;
+                    // console.log("HI");
+               }
+               but3(document.getElementById('t2').value, document.getElementById('e2').value, document.getElementById('m2').value, document.getElementById('s2').value, document.getElementById('ss2').value)
+          }
+          function but3(t2, e2, m2, s2, ss2) {
+               var avrg = parseInt(t2) + parseInt(e2) + parseInt(m2) + parseInt(s2) + parseInt(ss2);
+               total = avrg / 5;
+
+               if (total >= 90) {
+                    c2 = 5;
+
+               }
+               else if (total >= 80) {
+                    c2 = 4;
+
+               }
+               else if (total >= 70) {
+                    c2 = 3;
+
+               }
+               else if (total >= 60) {
+                    c2 = 2;
+
+
+               }
+               else if (total >= 50) {
+                    c2 = 1;
+
+
+               }
+               else {
+                    c2 = 0;
+                    // console.log("hi");
+
+               }
+
+               but4(document.getElementById('t3').value, document.getElementById('e3').value, document.getElementById('m3').value, document.getElementById('s3').value, document.getElementById('ss3').value)
+          }
+          function but4(t3, e3, m3, s3, ss3) {
+               var avrg = parseInt(t3) + parseInt(e3) + parseInt(m3) + parseInt(s3) + parseInt(ss3);
+               total = avrg / 5;
+
+               if (total >= 90) {
+                    c3 = 5;
+
+               }
+               else if (total >= 80) {
+                    c3 = 4;
+
+               }
+               else if (total >= 70) {
+                    c3 = 3;
+
+               }
+               else if (total >= 60) {
+                    c3 = 2;
+
+
+               }
+               else if (total >= 50) {
+                    c3 = 1;
+
+
+               }
+               else {
+                    c3 = 0;
+                    // console.log("hi");
+               }
+               var total = attend + c1 + c2 + c3;
+               console.log(total);
+               document.getElementById('ans').innerHTML = "Your internal mark is" + " " + total + "/20";
+
+          }
+
+
+
+
+        //     function add(sum)
+        //     {
+        //     var sum =attend;
+        //     var internalMark = sum;
+        //     console.log(internalMark + "/20")
+        //     }
+        // }
+        // var t = 50;
+        // var e = 50;
+        // var m = 90;
+        // var s = 70;
+        // var ss = 60;
+        // var avrg = t + e + m + s + ss;
+        // total = avrg / 5;
+
+        // if (total >= 90) {
+        //     var c1 = 5;
+        // }
+        // else if(total >= 80)
+        // {
+        //     var c1 = 4;
+
+        // }
+        // else if(total >= 70)
+        // {
+        //     var c1 = 3;
+
+        // }
+        // else if(total >= 60)
+        // {
+        //     var c1 = 2;
+
+        // }
+        // else if(total >= 50)
+        // {
+        //     var c1 = 1;
+
+        // }
+        // else
+        // {
+        //     var c1 = 0;
+
+        // }
+        // var t = 60;
+        // var e = 90;
+        // var m = 80;
+        // var s = 60;
+        // var ss =70;
+        // var avrg = t + e + m + s + ss;
+        // total = avrg / 5;
+
+        // if (total >= 90) {
+        //     var c2 = 5;
+        // }
+        // else if(total >= 80)
+        // {
+        //     var c2 = 4;
+
+        // }
+        // else if(total >= 70)
+        // {
+        //     var c2 = 3;
+
+        // }
+        // else if(total >= 60)
+        // {
+        //     var c2 = 2;
+
+        // }
+        // else if(total >= 50)
+        // {
+        //     var c2 = 1;
+
+        // }
+        // else{
+        //     var c2 = 0;
+
+        // }
+        // var t = 70;
+        // var e = 80;
+        // var m = 80;
+        // var s =70;
+        // var ss = 80;
+        // var avrg = t + e + m + s + ss;
+        // total = avrg / 5;
+        // if (total >= 90) {
+        //     var c3 = 5;
+        // }
+        // else if(total >= 80)
+        // {
+        //     var c3 = 4;
+
+        // }
+        // else if(total >= 70)
+        // {
+        //     var c3 = 3;
+
+        // }
+        // else if(total >= 60)
+        // {
+        //     var c3 = 2;
+
+        // }
+        // else if(total >= 50)
+        // {
+        //     var c3 = 1;
+
+        // }
+        // else {
+        //     var c3 = 0;
+
+        // }
+        // var sum = attend + c1 + c2 + c3;
+        // var internalMark =sum;
+        // console.log(internalMark + "/20");
+
+     </script>
+     <script src="./bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
